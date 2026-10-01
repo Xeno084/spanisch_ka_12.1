@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Spanisch-Klausurtrainer für Grammatik, Alltag, Lese- und Hörverstehen." />
+  <title>¡Vamos! Spanisch-Klausurtrainer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="study.css" />
+  <link rel="stylesheet" href="audio.css" />
+  <link rel="stylesheet" href="difficulty.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">V</div>
+        <div><strong>¡Vamos!</strong><span>Klausurtrainer</span></div>
+      </div>
+      <div class="sidebar-label">Dein Lernraum</div>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">⌂</span>Übersicht</button>
+        <button class="nav-item" data-view="practice"><span class="nav-icon">✦</span>Üben</button>
+        <button class="nav-item" data-view="listen"><span class="nav-icon">◖</span>Hören</button>
+      </nav>
+      <div class="sidebar-progress">
+        <div class="progress-heading"><span>Dein Fortschritt</span><strong id="progress-percent">0%</strong></div>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        <p id="progress-copy">Starte deine erste Aufgabe.</p>
+      </div>
+      <div class="sidebar-footer"><span class="status-dot"></span> Bereit zum Lernen</div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Menü öffnen">☰</button>
+        <div class="breadcrumb">Spanisch <span>/</span> <strong id="current-breadcrumb">Übersicht</strong></div>
+        <div class="topbar-actions"><span class="streak"><span>✹</span> 3 Tage Serie</span><div class="avatar">LS</div></div>
+      </header>
+
+      <section class="view active-view" id="dashboard-view">
+        <div class="hero-copy">
+          <div class="eyebrow">Klausur am Horizont <span></span></div>
+          <h1>¡Hola, <em>Lucía.</em><br>Du schaffst das.</h1>
+          <p>Trainiere gezielt die Themen, die in deiner Spanischklausur drankommen können.</p>
+          <button class="primary-button" data-view-target="practice">Jetzt üben <span>→</span></button>
+        </div>
+
+        <div class="today-card">
+          <div class="today-top"><span class="small-label">DEIN HEUTIGER FOKUS</span><span class="mini-badge">12 MIN</span></div>
+          <h2>Der Alltag auf Spanisch</h2>
+          <p>Reflexive Verben im Tagesablauf sicher anwenden.</p>
+          <div class="lesson-row"><div class="lesson-icon">☀</div><div><strong>Mini-Lektion</strong><span>5 Aufgaben · leicht</span></div><button class="round-arrow" data-topic="reflexive">→</button></div>
+        </div>
+
+        <div class="section-heading"><div><span class="eyebrow">Deine Themen</span><h2>Womit möchtest du starten?</h2></div><button class="text-button" data-view-target="practice">Alle Themen <span>→</span></button></div>
+        <div class="topic-grid" id="topic-grid">
+          <article class="topic-card coral" data-topic="reflexive"><div class="topic-top"><span class="topic-symbol">↻</span><span class="level">A2</span></div><h3>Reflexive Verben</h3><p>me levanto · te duchas</p><div class="topic-bottom"><span>6 Aufgaben</span><span class="card-arrow">↗</span></div></article>
+          <article class="topic-card teal" data-topic="gerundio"><div class="topic-top"><span class="topic-symbol">◌</span><span class="level">A2</span></div><h3>Estar + Gerundio</h3><p>Estoy estudiando...</p><div class="topic-bottom"><span>5 Aufgaben</span><span class="card-arrow">↗</span></div></article>
+          <article class="topic-card yellow" data-topic="para"><div class="topic-top"><span class="topic-symbol">→</span><span class="level">A2</span></div><h3>Para + Infinitiv</h3><p>...para aprender.</p><div class="topic-bottom"><span>5 Aufgaben</span><span class="card-arrow">↗</span></div></article>
+          <article class="topic-card blue" data-topic="muy"><div class="topic-top"><span class="topic-symbol">≋</span><span class="level">A2</span></div><h3>Muy vs. Mucho</h3><p>muy bien · muchas cosas</p><div class="topic-bottom"><span>6 Aufgaben</span><span class="card-arrow">↗</span></div></article>
+          <article class="topic-card lilac" data-topic="alltag"><div class="topic-top"><span class="topic-symbol">☼</span><span class="level">A2</span></div><h3>Mi día a día</h3><p>Wortschatz & Alltag</p><div class="topic-bottom"><span>8 Aufgaben</span><span class="card-arrow">↗</span></div></article>
+          <article class="topic-card mint" data-topic="reading"><div class="topic-top"><span class="topic-symbol">▤</span><span class="level">A2</span></div><h3>Leseverstehen</h3><p>Text lesen & verstehen</p><div class="topic-bottom"><span>1 Text · 5 Fragen</span><span class="card-arrow">↗</span></div></article>
+          <article class="topic-card peach" data-topic="listening"><div class="topic-top"><span class="topic-symbol">◖</span><span class="level">A2</span></div><h3>Hörverstehen</h3><p>Hören & Notizen machen</p><div class="topic-bottom"><span>1 Audio · 4 Fragen</span><span class="card-arrow">↗</span></div></article>
+        </div>
+
+        <div class="bottom-grid"><div class="quote-card"><span class="quote-mark">“</span><p>Un idioma diferente es una visión diferente de la vida.</p><span class="quote-source">— Federico Fellini</span></div><div class="week-card"><div class="week-title"><span class="eyebrow">Diese Woche</span><strong>2 / 5 Sessions</strong></div><div class="week-bars"><i class="done"></i><i class="done"></i><i></i><i></i><i></i></div><div class="week-days"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span></div></div></div>
+      </section>
+
+      <section class="view" id="practice-view">
+        <div class="practice-header"><div><div class="eyebrow">Übungsmodus <span></span></div><h1>Wähle dein Thema.</h1><p>Kurze Einheiten, direktes Feedback, sichtbarer Fortschritt.</p></div><button class="secondary-button" data-view-target="dashboard">← Übersicht</button></div>
+        <div class="difficulty-bar"><span class="small-label">Schwierigkeitsgrad</span><div class="difficulty-options" role="group" aria-label="Schwierigkeitsgrad auswählen"><button class="difficulty-option active" data-difficulty="easy"><strong>Leicht</strong><span>A1 · Einstieg</span></button><button class="difficulty-option" data-difficulty="medium"><strong>Mittel</strong><span>A2 · sicher werden</span></button><button class="difficulty-option" data-difficulty="challenge"><strong>Extra</strong><span>A2+ · kniffliger</span></button></div></div><div class="practice-layout"><div class="practice-topics" id="practice-topics"></div><div class="exercise-panel" id="exercise-panel"><div class="empty-state"><span>✦</span><h2>Bereit?</h2><p>Wähle links ein Thema und danach eine passende Stufe.</p></div></div></div>
+      </section>
+
+      <section class="view" id="listen-view">
+        <div class="practice-header"><div><div class="eyebrow">Hörverstehen <span></span></div><h1>Escucha con atención.</h1><p>Höre den kurzen Text und beantworte danach die Fragen.</p></div><button class="secondary-button" data-view-target="dashboard">← Übersicht</button></div>
+        <div class="listening-layout"><div class="listen-study"><div class="listen-study-main"><span class="small-label">Vorbereitung · A2</span><h2>So gehst du beim Hören vor</h2><p>Du musst nicht jedes Wort verstehen. Höre zuerst auf die Situation und notiere danach Namen, Orte, Zeiten und wichtige Verben.</p></div><div class="summary-strip"><span class="small-label">Kurz zusammengefasst</span><strong>1. Hören → 2. Schlüsselwörter notieren → 3. Fragen beantworten</strong></div><div class="listen-study-grid"><div><h3>Tipps</h3><ul><li>Höre beim ersten Mal nur auf das Thema.</li><li>Achte beim zweiten Hören auf Zahlen und Zeitangaben.</li><li>Schreibe einzelne Wörter auf, keine ganzen Sätze.</li></ul></div><div><h3>Satzbausteine</h3><div class="phrase-row">Se trata de ... — Es geht um ...</div><div class="phrase-row">He oído que ... — Ich habe gehört, dass ...</div><div class="phrase-row">La persona dice que ... — Die Person sagt, dass ...</div></div></div></div><div class="audio-card"><div class="audio-art"><span>◖</span></div><div class="audio-content"><span class="small-label">AUDIO 01 · A2</span><h2>Una mañana diferente</h2><p>Ein Text über Lucías Schulmorgen.</p><div class="audio-controls"><button id="play-audio" class="play-button" aria-label="Audio abspielen">▶</button><div class="audio-line"><div id="audio-progress"></div></div><span id="audio-time">0:00</span></div><label class="voice-picker" for="voice-select"><span>Spanische Stimme</span><select id="voice-select" aria-label="Spanische Stimme"><option>Wird geladen ...</option></select></label><div class="audio-note">Tipp: Wähle, wenn vorhanden, eine Microsoft- oder Google-Stimme für natürlichere Aussprache.</div></div></div><div class="transcript-card"><div class="transcript-heading"><span class="small-label">TRANSKRIPT</span><button id="toggle-transcript">Anzeigen</button></div><p id="transcript" class="hidden">Esta mañana Lucía se levanta a las siete porque tiene un examen de español. Desayuna rápido y sale de casa a las ocho menos cuarto. En el autobús, está estudiando los verbos. Llega a la escuela un poco nerviosa, pero sus amigas la esperan en la puerta.</p></div><div class="listen-questions" id="listen-questions"></div></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
